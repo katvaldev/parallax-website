@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Website - Vanilla Javascript</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="/img/stars.png" id="stars">
+        <img  src="/img/moon.png" id="moon">
+        <img src="/img/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="/img/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, corporis? Nobis atque aut assumenda dolore dolores sint temporibus deleniti impedit natus, soluta laborum qui eveniet beatae voluptas quidem aspernatur! Reprehenderit, laudantium? Assumenda quod obcaecati velit! Perspiciatis cumque, modi voluptatibus consectetur id explicabo pariatur dignissimos quia quos quas, vel dicta. Aperiam!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dicta placeat architecto, expedita soluta sit perspiciatis rem esse optio vero eveniet nostrum, fuga perferendis adipisci necessitatibus praesentium laudantium corporis nobis, voluptates maiores inventore. Natus porro, voluptates, impedit corrupti repellat omnis maiores illum harum quod minima labore doloribus eum perferendis repellendus temporibus soluta ab consequatur id nobis earum, consequuntur quas assumenda!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis magni iste similique voluptatum repudiandae sint labore, quos sunt perferendis expedita quam animi dicta voluptatem amet, doloremque non accusamus illum sapiente repellendus tenetur rerum necessitatibus. Asperiores recusandae animi iusto amet, aspernatur alias nam harum, ex distinctio culpa eos? Quasi quaerat fugiat quas? Praesentium optio autem repudiandae voluptas, sint sequi. Adipisci vero, mollitia nisi quos sint dolores eius veritatis voluptatum vel fuga.</p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.marginTop = value * 1.5 + 'px';
+        });
+    </script>
+</body>
+</html>
